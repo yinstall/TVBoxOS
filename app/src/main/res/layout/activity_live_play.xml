@@ -724,6 +724,23 @@
 
 		android:minWidth="270px">
 
+		<com.github.tvbox.osc.ui.tv.widget.MarqueeTextView
+			android:id="@+id/tv_right_top_channel_name"
+			android:layout_width="@dimen/vs_150"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_marginEnd="@dimen/vs_5"
+			android:layout_marginRight="@dimen/vs_5"
+			android:layout_toStartOf="@+id/iv_circle_bg"
+			android:layout_toLeftOf="@+id/iv_circle_bg"
+			android:ellipsize="marquee"
+			android:gravity="center"
+			android:marqueeRepeatLimit="marquee_forever"
+			android:singleLine="true"
+			android:text="测试频道"
+			android:textColor="#FFFCFFFF"
+			android:textSize="@dimen/vs_30" />
+
 		<TextView
 			android:id="@+id/tv_right_top_tipnetspeed"
 			android:layout_width="@dimen/vs_150"
