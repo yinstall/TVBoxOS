@@ -716,7 +716,6 @@
 		android:layout_gravity="center|right|top"
 		android:orientation="vertical"
 		android:id="@+id/ll_right_top_loading"
-		android:background="@drawable/shape_user_search"
 		android:layout_width="@dimen/vs_240"
 		android:layout_height="@dimen/vs_70"
 		android:layout_marginTop="25mm"
@@ -737,7 +736,8 @@
 			android:gravity="center"
 			android:marqueeRepeatLimit="marquee_forever"
 			android:singleLine="true"
-			android:text="测试频道"
+			android:visibility="gone"
+			android:text=""
 			android:textColor="#FFFCFFFF"
 			android:textSize="@dimen/vs_30" />
 
