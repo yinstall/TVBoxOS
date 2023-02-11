@@ -716,10 +716,10 @@
 		android:layout_gravity="center|right|top"
 		android:orientation="vertical"
 		android:id="@+id/ll_right_top_loading"
-		android:layout_width="@dimen/vs_240"
+		android:layout_width="@dimen/vs_150"
 		android:layout_height="@dimen/vs_70"
 		android:layout_marginTop="25mm"
-		android:layout_marginRight="25mm"
+		android:layout_marginRight="15mm"
 
 		android:minWidth="270px">
 
@@ -739,7 +739,7 @@
 			android:visibility="gone"
 			android:text=""
 			android:textColor="#FFFCFFFF"
-			android:textSize="@dimen/vs_30" />
+			android:textSize="@dimen/vs_10" />
 
 		<TextView
 			android:id="@+id/tv_right_top_tipnetspeed"
