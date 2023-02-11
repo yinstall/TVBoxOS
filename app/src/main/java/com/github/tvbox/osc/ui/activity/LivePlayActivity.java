@@ -537,7 +537,7 @@ public class LivePlayActivity extends BaseActivity {
                 }
 
                 public void onFinish() {
-                    ll_right_top_loading.setVisibility(View.GONE);
+                    //ll_right_top_loading.setVisibility(View.GONE);
                 }
             };
 
@@ -1196,6 +1196,7 @@ public class LivePlayActivity extends BaseActivity {
                     case VideoView.STATE_BUFFERING:
                         mHandler.removeCallbacks(mConnectTimeoutChangeSourceRun);
                         mHandler.postDelayed(mConnectTimeoutChangeSourceRun, (Hawk.get(HawkConfig.LIVE_CONNECT_TIMEOUT, 1) + 1) * 5000);
+						ll_right_top_loading.setVisibility(View.VISIBLE);
                         break;
                 }
             }
