@@ -524,8 +524,8 @@ public class LivePlayActivity extends BaseActivity {
             } else {
                 ((TextView) findViewById(R.id.tv_source)).setText("[线路" + (channel_Name.getSourceIndex() + 1) + "/" + channel_Name.getSourceNum() + "]");
             }
-            tv_right_top_channel_name.setText(channel_Name.getChannelName());
-            tv_right_top_epg_name.setText(channel_Name.getChannelName());
+            //tv_right_top_channel_name.setText(channel_Name.getChannelName());
+            //tv_right_top_epg_name.setText(channel_Name.getChannelName());
             ll_right_top_loading.setVisibility(View.VISIBLE);
 
             if (countDownTimerRightTop != null) {
@@ -1690,6 +1690,7 @@ public class LivePlayActivity extends BaseActivity {
     };
 
     private void showNetSpeed() {
+        tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
         if (Hawk.get(HawkConfig.LIVE_SHOW_NET_SPEED, false)) {
             mHandler.post(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.VISIBLE);
@@ -1704,7 +1705,7 @@ public class LivePlayActivity extends BaseActivity {
         public void run() {
             if (mVideoView == null) return;
             tvNetSpeed.setText(String.format("%.2fMb/s", (float)mVideoView.getTcpSpeed() / 1024.0 / 1024.0));
-            tv_right_top_tipnetspeed.setText(String.format("%.2fKb/s",(float)mVideoView.getTcpSpeed()/1024.0));
+            tv_right_top_tipnetspeed.setText(String.format("%.2fMb/s",(float)mVideoView.getTcpSpeed()/1024.0/1024.0));
             mHandler.postDelayed(this, 1000);
         }
     };
