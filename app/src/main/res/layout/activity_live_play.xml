@@ -512,7 +512,7 @@
 			android:layout_height="wrap_content"
 			android:layout_alignTop="@+id/view_bg"
 			android:layout_marginLeft="@dimen/vs_0"
-			android:layout_marginTop="@dimen/vs_35"
+			android:layout_marginTop="@dimen/vs_30"
 			android:layout_toRightOf="@+id/channelinfo"
 			android:gravity="center"
 			android:text=""
@@ -602,7 +602,7 @@
 
 		<TextView
 			android:id="@+id/tv_source"
-			android:layout_width="wrap_content"
+			android:layout_width="@dimen/vs_50"
 			android:layout_height="wrap_content"
 			android:layout_alignTop="@+id/view_bg"
 			android:layout_marginRight="@dimen/vs_20"
