@@ -357,15 +357,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginTop="30mm"
-        android:layout_marginRight="60mm"
-        android:background="@drawable/shape_live_channel_num"
+        android:layout_marginEnd="45mm"
+        android:layout_marginRight="45mm"
+        android:background="@drawable/shape_user_pause"
         android:gravity="center"
-        android:paddingTop="5mm"
-        android:paddingBottom="5mm"
+        android:padding="15mm"
+        android:shadowColor="#FF000000"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="3"
         android:textColor="@android:color/white"
-        android:textSize="36mm"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:textSize="@dimen/ts_34"
+        android:visibility="gone"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvTime"
