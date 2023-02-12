@@ -512,7 +512,7 @@
 			android:layout_height="wrap_content"
 			android:layout_alignTop="@+id/view_bg"
 			android:layout_marginLeft="@dimen/vs_0"
-			android:layout_marginTop="@dimen/vs_40"
+			android:layout_marginTop="@dimen/vs_35"
 			android:layout_toRightOf="@+id/channelinfo"
 			android:gravity="center"
 			android:text=""
@@ -609,9 +609,17 @@
 			android:layout_marginTop="@dimen/vs_10"
 			android:layout_marginBottom="@dimen/vs_10"
 			android:layout_alignParentRight="true"
+			android:layout_weight="1"
+			android:background="@drawable/channel_num_bg"
+			android:gravity="center"
+			android:padding="@dimen/vs_5"
+			android:shadowColor="@color/color_CC000000"
+			android:shadowDx="0"
+			android:shadowDy="0"
+			android:shadowRadius="2"
 			android:text="源 1/1"
 			android:textColor="@color/color_FFFFFF"
-			android:textSize="@dimen/ts_26" />
+			android:textSize="@dimen/ts_20" />
 	</RelativeLayout>
 
 
