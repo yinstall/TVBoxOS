@@ -524,6 +524,7 @@ public class LivePlayActivity extends BaseActivity {
             //tv_right_top_channel_name.setText(channel_Name.getChannelName());
             //tv_right_top_epg_name.setText(channel_Name.getChannelName());
             //ll_right_top_loading.setVisibility(View.VISIBLE);
+           mHandler.post(mUpdateNetSpeedRun);
 
            /*
             * if (countDownTimerRightTop != null) {
@@ -539,6 +540,7 @@ public class LivePlayActivity extends BaseActivity {
             *     }
             * };
             */
+
         }
         //countDownTimerRightTop.start();
     }
@@ -1608,7 +1610,6 @@ public class LivePlayActivity extends BaseActivity {
         livePlayerManager.init(mVideoView);
         showTime();
         showNetSpeed();
-        mHandler.post(mUpdateNetSpeedRun);
         tvLeftChannelListLayout.setVisibility(View.INVISIBLE);
         tvRightSettingLayout.setVisibility(View.INVISIBLE);
 
