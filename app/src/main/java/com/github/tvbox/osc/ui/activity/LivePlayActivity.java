@@ -527,23 +527,25 @@ public class LivePlayActivity extends BaseActivity {
             //tv_right_top_epg_name.setText(channel_Name.getChannelName());
             ll_right_top_loading.setVisibility(View.VISIBLE);
 
-            if (countDownTimerRightTop != null) {
-                countDownTimerRightTop.cancel();
-            }
-            countDownTimerRightTop = new CountDownTimer(5000, 1000) {
+           /*
+            * if (countDownTimerRightTop != null) {
+            *     countDownTimerRightTop.cancel();
+            * }
+            * countDownTimerRightTop = new CountDownTimer(5000, 1000) {
 
-                public void onTick(long j) {
-                }
+            *     public void onTick(long j) {
+            *     }
 
-                public void onFinish() {
-                    //ll_right_top_loading.setVisibility(View.GONE);
-                }
-            };
+            *     public void onFinish() {
+            *         ll_right_top_loading.setVisibility(View.GONE);
+            *     }
+            * };
+            */
 
             mHandler.post(mUpdateNetSpeedRun);
             tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
         }
-        countDownTimerRightTop.start();
+        //countDownTimerRightTop.start();
     }
 
     private void updateChannelIcon(String channelName, String logoUrl) {
@@ -1192,10 +1194,11 @@ public class LivePlayActivity extends BaseActivity {
                         mHandler.post(mConnectTimeoutChangeSourceRun);
                         break;
                     case VideoView.STATE_PREPARING:
+						ll_right_top_loading.setVisibility(View.VISIBLE);
+                        break;
                     case VideoView.STATE_BUFFERING:
                         mHandler.removeCallbacks(mConnectTimeoutChangeSourceRun);
                         mHandler.postDelayed(mConnectTimeoutChangeSourceRun, (Hawk.get(HawkConfig.LIVE_CONNECT_TIMEOUT, 1) + 1) * 5000);
-						ll_right_top_loading.setVisibility(View.VISIBLE);
                         break;
                 }
             }
