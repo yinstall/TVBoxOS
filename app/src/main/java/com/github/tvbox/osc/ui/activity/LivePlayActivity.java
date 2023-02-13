@@ -1186,7 +1186,7 @@ public class LivePlayActivity extends BaseActivity {
                     case VideoView.STATE_PLAYING:
                         currentLiveChangeSourceTimes = 0;
                         mHandler.removeCallbacks(mConnectTimeoutChangeSourceRun);
-						ll_right_top_loading.setVisibility(View.GONE);
+                        ll_right_top_loading.setVisibility(View.GONE);
                         break;
                     case VideoView.STATE_ERROR:
                     case VideoView.STATE_PLAYBACK_COMPLETED:
@@ -1194,11 +1194,10 @@ public class LivePlayActivity extends BaseActivity {
                         mHandler.post(mConnectTimeoutChangeSourceRun);
                         break;
                     case VideoView.STATE_PREPARING:
-						ll_right_top_loading.setVisibility(View.VISIBLE);
-                        break;
                     case VideoView.STATE_BUFFERING:
                         mHandler.removeCallbacks(mConnectTimeoutChangeSourceRun);
                         mHandler.postDelayed(mConnectTimeoutChangeSourceRun, (Hawk.get(HawkConfig.LIVE_CONNECT_TIMEOUT, 1) + 1) * 5000);
+                        ll_right_top_loading.setVisibility(View.VISIBLE);
                         break;
                 }
             }
