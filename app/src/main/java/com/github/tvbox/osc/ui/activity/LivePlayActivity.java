@@ -1706,7 +1706,7 @@ public class LivePlayActivity extends BaseActivity {
             if (mVideoView == null) return;
             tvNetSpeed.setText(String.format("%.2fMb/s", (float)mVideoView.getTcpSpeed() / 1024.0 / 1024.0));
             tv_right_top_tipnetspeed.setText(String.format("%.2fMb/s",(float)mVideoView.getTcpSpeed()/1024.0/1024.0));
-            mHandler.postDelayed(this, 200);
+            mHandler.postDelayed(this, 500);
         }
     };
 
