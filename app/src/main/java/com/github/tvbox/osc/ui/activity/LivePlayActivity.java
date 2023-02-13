@@ -1690,7 +1690,7 @@ public class LivePlayActivity extends BaseActivity {
     };
 
     private void showNetSpeed() {
-        tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
+        //tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
         if (Hawk.get(HawkConfig.LIVE_SHOW_NET_SPEED, false)) {
             mHandler.post(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.VISIBLE);
@@ -1706,7 +1706,7 @@ public class LivePlayActivity extends BaseActivity {
             if (mVideoView == null) return;
             tvNetSpeed.setText(String.format("%.2fMb/s", (float)mVideoView.getTcpSpeed() / 1024.0 / 1024.0));
             tv_right_top_tipnetspeed.setText(String.format("%.2fMb/s",(float)mVideoView.getTcpSpeed()/1024.0/1024.0));
-            mHandler.postDelayed(this, 300);
+            mHandler.postDelayed(this, 200);
         }
     };
 
