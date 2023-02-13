@@ -523,7 +523,7 @@ public class LivePlayActivity extends BaseActivity {
             }
             //tv_right_top_channel_name.setText(channel_Name.getChannelName());
             //tv_right_top_epg_name.setText(channel_Name.getChannelName());
-            ll_right_top_loading.setVisibility(View.VISIBLE);
+            ll_right_top_loading.setVisibility(View.GONE);
 
            /*
             * if (countDownTimerRightTop != null) {
@@ -1158,6 +1158,7 @@ public class LivePlayActivity extends BaseActivity {
 
     private void initVideoView() {
         mHandler.post(mUpdateNetSpeedRun);
+        tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
         LiveController controller = new LiveController(this);
         controller.setListener(new LiveController.LiveControlListener() {
             @Override
