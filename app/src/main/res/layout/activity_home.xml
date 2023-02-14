@@ -52,6 +52,7 @@
             android:textAlignment="gravity"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_20"
+            android:textStyle="bold"
             tools:text="DateTime" />
     </LinearLayout>
 
