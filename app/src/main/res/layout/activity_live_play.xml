@@ -512,7 +512,7 @@
 			android:layout_height="wrap_content"
 			android:layout_alignTop="@+id/view_bg"
 			android:layout_marginLeft="@dimen/vs_0"
-			android:layout_marginTop="@dimen/vs_40"
+			android:layout_marginTop="@dimen/vs_35"
 			android:layout_toRightOf="@+id/channelinfo"
 			android:gravity="center"
 			android:text=""
