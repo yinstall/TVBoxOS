@@ -15,7 +15,6 @@
         android:id="@+id/tvChannelNum"
         android:layout_width="60mm"
         android:layout_height="30mm"
-        android:layout_marginRight="@dimen/vs_10"
         android:background="@drawable/channel_num_bg"
         android:ellipsize="marquee"
         android:gravity="center"
