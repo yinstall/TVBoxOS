@@ -17,7 +17,6 @@
         android:layout_height="30mm"
         android:layout_marginStart="@dimen/vs_15"
         android:layout_marginEnd="@dimen/vs_15"
-        android:layout_marginRight="@dimen/vs_5"
         android:background="@drawable/channel_num_bg"
         android:ellipsize="marquee"
         android:gravity="center"
