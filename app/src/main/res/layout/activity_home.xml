@@ -32,6 +32,7 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:minHeight="@dimen/vs_30"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:gravity="left|center_vertical"
