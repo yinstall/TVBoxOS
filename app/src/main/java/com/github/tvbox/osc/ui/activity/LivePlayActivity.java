@@ -144,7 +144,7 @@ public class LivePlayActivity extends BaseActivity {
     TextView tv_nextepg_left;
     private MyEpgAdapter myAdapter;
     private TextView tv_right_top_tipnetspeed;
-    private TextView tv_right_top_channel_name;
+    //private TextView tv_right_top_channel_name;
     private TextView tv_right_top_epg_name;
     private TextView tv_right_top_type;
     //private ImageView iv_circle_bg;
@@ -225,7 +225,7 @@ public class LivePlayActivity extends BaseActivity {
         tv_nextepg_left= (TextView) findViewById(R.id.tv_current_program);//下一节目
         ll_epg = (RelativeLayout) findViewById(R.id.ll_epg);
         tv_right_top_tipnetspeed = (TextView)findViewById(R.id.tv_right_top_tipnetspeed);
-        tv_right_top_channel_name = (TextView)findViewById(R.id.tv_right_top_channel_name);
+        //tv_right_top_channel_name = (TextView)findViewById(R.id.tv_right_top_channel_name);
         tv_right_top_epg_name = (TextView)findViewById(R.id.tv_right_top_epg_name);
         tv_right_top_type = (TextView)findViewById(R.id.tv_right_top_type);
         //iv_circle_bg = (ImageView) findViewById(R.id.iv_circle_bg);
