@@ -426,7 +426,7 @@ public class LivePlayActivity extends BaseActivity {
         UrlHttpUtil.get(url, new CallBackUtil.CallBackString() {
             public void onFailure(int i, String str) {
                 showEpg(date, new ArrayList());
-                showBottomEpg();
+                //showBottomEpg();
             }
 
             public void onResponse(String paramString) {
@@ -453,7 +453,7 @@ public class LivePlayActivity extends BaseActivity {
                 String savedEpgKey = channelName + "_" + liveEpgDateAdapter.getItem(liveEpgDateAdapter.getSelectedIndex()).getDatePresented();
                 if (!hsEpg.contains(savedEpgKey))
                     hsEpg.put(savedEpgKey, arrayList);
-                    //showBottomEpg();
+                showBottomEpg();
             }
         });
     }
@@ -521,25 +521,24 @@ public class LivePlayActivity extends BaseActivity {
             } else {
                 ((TextView) findViewById(R.id.tv_source)).setText("线路" + (channel_Name.getSourceIndex() + 1) + "/" + channel_Name.getSourceNum());
             }
-            //tv_right_top_channel_name.setText(channel_Name.getChannelName());
-            //tv_right_top_epg_name.setText(channel_Name.getChannelName());
-            //ll_right_top_loading.setVisibility(View.VISIBLE);
+            /*
+            tv_right_top_channel_name.setText(channel_Name.getChannelName());
+            tv_right_top_epg_name.setText(channel_Name.getChannelName());
+            ll_right_top_loading.setVisibility(View.VISIBLE);
 
-           /*
-            * if (countDownTimerRightTop != null) {
-            *     countDownTimerRightTop.cancel();
-            * }
-            * countDownTimerRightTop = new CountDownTimer(5000, 1000) {
+            if (countDownTimerRightTop != null) {
+                countDownTimerRightTop.cancel();
+            }
+            countDownTimerRightTop = new CountDownTimer(5000, 1000) {
 
-            *     public void onTick(long j) {
-            *     }
+                public void onTick(long j) {
+                }
 
-            *     public void onFinish() {
-            *         ll_right_top_loading.setVisibility(View.GONE);
-            *     }
-            * };
+                public void onFinish() {
+                    ll_right_top_loading.setVisibility(View.GONE);
+                }
+            };
             */
-
         }
         //countDownTimerRightTop.start();
     }
