@@ -66,6 +66,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import me.jessyan.autosize.utils.AutoSizeUtils;
 
@@ -94,7 +95,7 @@ public class HomeActivity extends BaseActivity {
         public void run() {
             Date date = new Date();
             @SuppressLint("SimpleDateFormat")
-            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy年MM月dd日  HH:mm  EEEE", new Locale("CHINA"));
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy年MM月dd日  HH:mm  EEEE", Locale.CHINA);
             tvDate.setText(timeFormat.format(date));
             mHandler.postDelayed(this, 1000);
         }
