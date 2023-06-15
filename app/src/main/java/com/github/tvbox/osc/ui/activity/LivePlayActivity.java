@@ -1688,12 +1688,12 @@ public class LivePlayActivity extends BaseActivity {
     };
 
     private void showNetSpeed() {
-        mHandler.post(mUpdateNetSpeedRun);
+        //tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
         if (Hawk.get(HawkConfig.LIVE_SHOW_NET_SPEED, false)) {
-            //mHandler.post(mUpdateNetSpeedRun);
+            mHandler.post(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.VISIBLE);
         } else {
-            //mHandler.removeCallbacks(mUpdateNetSpeedRun);
+            mHandler.removeCallbacks(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.GONE);
         }
     }
