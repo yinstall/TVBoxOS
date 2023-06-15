@@ -426,7 +426,7 @@ public class LivePlayActivity extends BaseActivity {
         UrlHttpUtil.get(url, new CallBackUtil.CallBackString() {
             public void onFailure(int i, String str) {
                 showEpg(date, new ArrayList());
-                //showBottomEpg();
+//                showBottomEpg();//当EPG地址无法访问时，会陷入死循环不断请求
             }
 
             public void onResponse(String paramString) {
@@ -551,7 +551,7 @@ public class LivePlayActivity extends BaseActivity {
             liveIconNullText.setText("" + channel_Name.getChannelNum());
         } else {
             imgLiveIcon.setVisibility(View.VISIBLE);
-            Picasso.get().load(logoUrl).placeholder(R.drawable.app_banner).into(imgLiveIcon);
+            Picasso.get().load(logoUrl).into(imgLiveIcon);
             liveIconNullBg.setVisibility(View.INVISIBLE);
             liveIconNullText.setVisibility(View.INVISIBLE);
         }
@@ -1608,7 +1608,6 @@ public class LivePlayActivity extends BaseActivity {
         livePlayerManager.init(mVideoView);
         showTime();
         showNetSpeed();
-        mHandler.post(mUpdateNetSpeedRun);
         tvLeftChannelListLayout.setVisibility(View.INVISIBLE);
         tvRightSettingLayout.setVisibility(View.INVISIBLE);
 
@@ -1689,12 +1688,12 @@ public class LivePlayActivity extends BaseActivity {
     };
 
     private void showNetSpeed() {
-        //tv_right_top_tipnetspeed.setVisibility(View.VISIBLE);
+        mHandler.post(mUpdateNetSpeedRun);
         if (Hawk.get(HawkConfig.LIVE_SHOW_NET_SPEED, false)) {
-            mHandler.post(mUpdateNetSpeedRun);
+            //mHandler.post(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.VISIBLE);
         } else {
-            mHandler.removeCallbacks(mUpdateNetSpeedRun);
+            //mHandler.removeCallbacks(mUpdateNetSpeedRun);
             tvNetSpeed.setVisibility(View.GONE);
         }
     }
@@ -1703,8 +1702,9 @@ public class LivePlayActivity extends BaseActivity {
         @Override
         public void run() {
             if (mVideoView == null) return;
-            tvNetSpeed.setText(String.format("%.2fMb/s", (float)mVideoView.getTcpSpeed() / 1024.0 / 1024.0));
-            tv_right_top_tipnetspeed.setText(String.format("%.2fMb/s",(float)mVideoView.getTcpSpeed()/1024.0/1024.0));
+            String speed = String.format("%.2fMb/s", (float)mVideoView.getTcpSpeed() / 1024.0 / 1024.0);
+            tvNetSpeed.setText(speed);
+            tv_right_top_tipnetspeed.setText(speed);
             mHandler.postDelayed(this, 500);
         }
     };
