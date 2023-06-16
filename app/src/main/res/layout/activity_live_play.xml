@@ -464,7 +464,8 @@
 					android:id="@+id/live_icon_null_text"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_gravity="center_horizontal"
+					android:layout_gravity="center"
+					android:layout_marginBottom="14dp"
 					android:maxLines="1"
 					android:ellipsize='marquee'
 					android:singleLine="true"
