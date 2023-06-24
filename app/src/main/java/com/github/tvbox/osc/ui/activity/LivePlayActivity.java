@@ -550,6 +550,9 @@ public class LivePlayActivity extends BaseActivity {
             imgLiveIcon.setVisibility(View.INVISIBLE);
             liveIconNullText.setText("" + channel_Name.getChannelNum());
         } else {
+            if(epgStringAddress.contains("live.64ma.com") && epgStringAddress.contains("logo=true")){
+                logoUrl = logoUrl.replace("http://epg.51zmt.top:8000", "https://live.64ma.com/api/epg/cache");
+            }
             imgLiveIcon.setVisibility(View.VISIBLE);
             Picasso.get().load(logoUrl).placeholder(R.drawable.app_banner).into(imgLiveIcon);
             liveIconNullBg.setVisibility(View.INVISIBLE);
