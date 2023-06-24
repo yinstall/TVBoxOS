@@ -404,10 +404,6 @@ public class ApiConfig {
                     String epg =livesOBJ.get("epg").getAsString();
                     Hawk.put(HawkConfig.EPG_URL,epg);
                 }
-                if(livesOBJ.has("logo")){
-                    String logo =livesOBJ.get("logo").getAsString();
-                    Hawk.put(HawkConfig.LOGO_URL,logo);
-                }
 
                 LiveChannelGroup liveChannelGroup = new LiveChannelGroup();
                 liveChannelGroup.setGroupName(url);
@@ -424,10 +420,6 @@ public class ApiConfig {
                         if(fengMiLives.has("epg")){
                             String epg =fengMiLives.get("epg").getAsString();
                             Hawk.put(HawkConfig.EPG_URL,epg);
-                        }
-                        if(fengMiLives.has("logo")){
-                            String logo =fengMiLives.get("logo").getAsString();
-                            Hawk.put(HawkConfig.LOGO_URL,logo);
                         }
 
                         if(url.startsWith("http")){

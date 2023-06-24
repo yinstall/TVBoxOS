@@ -409,10 +409,10 @@ public class LivePlayActivity extends BaseActivity {
         timeFormat.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
         String[] epgInfo = EpgUtil.getEpgInfo(channelName);
         String epgTagName = channelName;
+        updateChannelIcon(channelName, epgInfo == null ? null : epgInfo[0]);
         if (epgInfo != null && !epgInfo[1].isEmpty()) {
             epgTagName = epgInfo[1];
         }
-        updateChannelIcon(channelName, epgInfo == null ? null : epgInfo[0], epgTagName);
         String finalChannelName = channelName;
         epgListAdapter.CanBack(currentLiveChannelItem.getinclude_back());
         //epgListAdapter.updateData(date, new ArrayList<>());
@@ -472,11 +472,7 @@ public class LivePlayActivity extends BaseActivity {
             String savedEpgKey = channel_Name.getChannelName() + "_" + liveEpgDateAdapter.getItem(liveEpgDateAdapter.getSelectedIndex()).getDatePresented();
             if (hsEpg.containsKey(savedEpgKey)) {
                 String[] epgInfo = EpgUtil.getEpgInfo(channel_Name.getChannelName());
-                String epgTagName = channel_Name.getChannelName();
-                if (epgInfo != null && !epgInfo[1].isEmpty()) {
-                    epgTagName = epgInfo[1];
-                }
-                updateChannelIcon(channel_Name.getChannelName(), epgInfo == null ? null : epgInfo[0], epgTagName);
+                updateChannelIcon(channel_Name.getChannelName(), epgInfo == null ? null : epgInfo[0]);
                 ArrayList arrayList = (ArrayList) hsEpg.get(savedEpgKey);
                 if (arrayList != null && arrayList.size() > 0) {
                     int size = arrayList.size() - 1;
@@ -547,17 +543,13 @@ public class LivePlayActivity extends BaseActivity {
         //countDownTimerRightTop.start();
     }
 
-    private void updateChannelIcon(String channelName, String logoUrl, String epgTagName) {
+    private void updateChannelIcon(String channelName, String logoUrl) {
         if (StringUtils.isEmpty(logoUrl)) {
             liveIconNullBg.setVisibility(View.VISIBLE);
             liveIconNullText.setVisibility(View.VISIBLE);
             imgLiveIcon.setVisibility(View.INVISIBLE);
             liveIconNullText.setText("" + channel_Name.getChannelNum());
         } else {
-            String logoStringAddress = Hawk.get(HawkConfig.LOGO_URL,"");
-            if(logoStringAddress != null && logoStringAddress.length()>5) {
-                logoUrl = logoStringAddress.replace("{name}",URLEncoder.encode(epgTagName));
-            }
             imgLiveIcon.setVisibility(View.VISIBLE);
             Picasso.get().load(logoUrl).placeholder(R.drawable.app_banner).into(imgLiveIcon);
             liveIconNullBg.setVisibility(View.INVISIBLE);
