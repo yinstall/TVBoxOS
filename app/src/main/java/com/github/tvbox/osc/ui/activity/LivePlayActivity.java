@@ -550,6 +550,10 @@ public class LivePlayActivity extends BaseActivity {
             imgLiveIcon.setVisibility(View.INVISIBLE);
             liveIconNullText.setText("" + channel_Name.getChannelNum());
         } else {
+            logoStringAddress = Hawk.get(HawkConfig.LOGO_URL,"");
+            if(logoStringAddress != null && logoStringAddress.length()>5) {
+                logoUrl = logoStringAddress;
+            }
             imgLiveIcon.setVisibility(View.VISIBLE);
             Picasso.get().load(logoUrl).placeholder(R.drawable.app_banner).into(imgLiveIcon);
             liveIconNullBg.setVisibility(View.INVISIBLE);
